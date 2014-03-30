@@ -1,10 +1,23 @@
 package com.senac.conta;
+import com.senac.exception.*;
 
 public class Conta {
 	
 	private double saldo;
 	private int numConta;
 	private int numVerificacao;
+	
+	public Conta () {
+		
+	}
+	
+	public Conta (double saldo, int numConta, int numVerificacao) {
+		
+		this.saldo = saldo;
+		this.numConta = numConta;
+		this.numVerificacao = numVerificacao;
+		
+	}
 	
 	public double getSaldo() {
 		return saldo;
@@ -29,7 +42,7 @@ public class Conta {
 		
 	}
 	
-	public void sacar (double valor) {
+	public void sacar (double valor) throws ExcecaoSaldoInsuficiente {
 		if (valor > 0) {
 			saldo = saldo - valor;
 		} else {
