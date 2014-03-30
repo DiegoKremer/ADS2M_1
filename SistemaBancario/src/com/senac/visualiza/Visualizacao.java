@@ -42,6 +42,29 @@ public class Visualizacao {
 		return entrada.nextInt();
 	}
 	
+	public int cadastroLimiteEspecial () {
+		System.out.println("Digite o limite da conta: ");
+		return entrada.nextInt();
+	}
+	
+	public int menuview () {
+		
+		System.out.println("Sistema Bancário");
+		System.out.println("1 - Cadastrar cliente normal");
+		System.out.println("2 - Cadastrar cliente especial");
+		System.out.println("3 - Cadastrar cliente investimento");
+		System.out.println("4 - Obter saldo");
+		System.out.println("");
+		System.out.println("");
+		
+		return entrada.nextInt();
+		
+	}
+	
+	
+	
+		
+	
 	}
 
 	

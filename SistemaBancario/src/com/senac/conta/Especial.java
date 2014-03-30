@@ -7,6 +7,10 @@ public class Especial extends Conta {
 	
 	private double limite;
 	
+	public Especial () {
+		
+	}
+	
 	public Especial (double saldo, int numConta, int numVerificacao, double limite) {
 		
 		super (saldo, numConta, numVerificacao);
