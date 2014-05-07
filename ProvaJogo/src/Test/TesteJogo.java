@@ -6,12 +6,20 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import Controller.Gerencia;
+import Exceptions.PosicaoLimiteException;
 import Model.Caminhao;
 import Model.Deserto;
+import View.Visualiza;
 
 
 public class TesteJogo {
 
+	Visualiza view = new Visualiza ();
+	Deserto deserto = new Deserto ();
+	Caminhao caminhao = new Caminhao ();
+	Gerencia gerencia = new Gerencia ();
+	
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -23,21 +31,27 @@ public class TesteJogo {
 	
 	@Test
 	public void TestUnidadesDeserto () {
-		Deserto deserto = new Deserto ();
 		assertTrue(deserto.posicoes().length == 9);
 	}
 	
 	@Test
 	public void TestCapacidadeCombustivelCaminhao () {
-		Caminhao caminhao = new Caminhao ();
 		assertTrue (caminhao.combustivelMax() == 6);
 		
 	}
 	
+	@Test
 	public void TestSetGetCombustivelCaminhao () {
-		Caminhao caminhao = new Caminhao (); 
 		caminhao.setCombustivelCaminhao(5);
 		assertTrue(caminhao.getCombustivel() == 5);
+	}
+	
+	@Test
+	public void TestCaminhaoAvancar () {
+		caminhao.setPosicaoCaminhao(0);
+		gerencia.caminhaoAvancar();
+		assertTrue((caminhao.getPosicaoCaminhao() == 1));
+		
 	}
 	
 	
