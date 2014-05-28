@@ -6,7 +6,7 @@ public class FullStackException extends Exception {
 
 	public FullStackException () {
 		
-		super ("Vetor cheio");
+		super ("A pilha está cheia.");
 		
 	}
 }
